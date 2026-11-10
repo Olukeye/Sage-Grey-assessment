@@ -8,7 +8,7 @@ import { AuthRepository } from './modules/auth/auth.repository';
 import { createAuthenticate } from './modules/auth/auth.middleware';
 import { createAuthRouter } from './modules/auth/auth.routes';
 import { AuthService } from './modules/auth/auth.service';
-import { TokenService } from './modules/auth/token.service';
+import { TokenService } from './modules/auth/auth.token.service';
 import { WalletRepository } from './modules/wallet/wallet.repository';
 import { createWalletRouter } from './modules/wallet/wallet.routes';
 import { WalletService } from './modules/wallet/wallet.service';

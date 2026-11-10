@@ -1,6 +1,6 @@
 import jwt from 'jsonwebtoken';
 import { describe, expect, it } from 'vitest';
-import { TokenService } from '../../src/modules/auth/token.service';
+import { TokenService } from '../../src/modules/auth/auth.token.service';
 
 const service = new TokenService({ JWT_SECRET: 'x'.repeat(40), ACCESS_TOKEN_TTL_SECONDS: 60 });
 

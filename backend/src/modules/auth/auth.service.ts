@@ -9,7 +9,7 @@ import type { AccountDto } from '../wallet/wallet.dto';
 import type { WalletService } from '../wallet/wallet.service';
 import type { AuthRepository, UserRecord } from './auth.repository';
 import type { LoginInput, RegisterInput } from './auth.schemas';
-import type { TokenService } from './token.service';
+import type { TokenService } from './auth.token.service';
 
 export interface UserDto {
   id: string;

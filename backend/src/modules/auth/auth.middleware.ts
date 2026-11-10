@@ -1,6 +1,6 @@
 import type { RequestHandler } from 'express';
 import { unauthorized } from '../../shared/errors';
-import type { TokenService } from './token.service';
+import type { TokenService } from './auth.token.service';
 
 export function createAuthenticate(tokens: TokenService): RequestHandler {
   return (req, _res, next) => {

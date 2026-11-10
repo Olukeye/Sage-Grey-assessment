@@ -30,11 +30,9 @@ async function request<T>(url: string, signal?: AbortSignal): Promise<T> {
   return (await response.json()) as T;
 }
 
-/**
- * Related resources (films, species, ...) are shared by many characters, so they are
- * cached per session. They are fetched without an abort signal so that one cancelled
- * consumer cannot poison the cache for another.
- */
+// Related resources (films, species, ...) are shared by many characters, so they are
+//cached per session. They are fetched without an abort signal so that one cancelled
+// consumer cannot poison the cache for another.
 const relatedCache = new Map<string, Promise<unknown>>();
 
 function cachedRequest<T>(url: string): Promise<T> {
