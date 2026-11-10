@@ -17,7 +17,7 @@ Authentication is real (not faux): registration, login, short-lived access token
 |---|---|---|
 | Language / runtime | TypeScript on Node.js 20+, Express 5 | Type-safety on money-handling code; Express 5 forwards async errors to the error handler natively. |
 | Query layer | **Knex** | Required by the brief. |
-| Database | **PostgreSQL** (SQLite in-memory for fast tests) | See below. |
+| Database | **PostgreSQL**  | See below. |
 | Validation | Zod | One schema = runtime validation + inferred TypeScript types. |
 | Passwords | bcrypt (cost 12) | Adaptive, salted, battle-tested. |
 | Sessions | JWT access token (15 min) + opaque rotating refresh token (7 days) | Stateless API calls; revocable long-lived sessions. |
