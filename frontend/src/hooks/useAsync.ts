@@ -5,10 +5,6 @@ export type AsyncState<T> =
   | { status: 'error'; message: string }
   | { status: 'success'; data: T };
 
-/**
- * Runs an async function whenever `deps` change. Cancels the in-flight request on change
- * or unmount, so a slow earlier response can never overwrite a newer one.
- */
 export function useAsync<T>(
   task: (signal: AbortSignal) => Promise<T>,
   deps: DependencyList,

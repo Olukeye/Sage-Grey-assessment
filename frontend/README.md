@@ -10,17 +10,16 @@ Requires Node.js 20+.
 
 ```bash
 npm install
-npm run dev        # http://localhost:5173
+npm run dev        
 ```
 
 Other scripts:
 
 ```bash
-npm test           # run the test-suite once
-npm run test:watch
+npm test          
 npm run typecheck
-npm run build      # production build in dist/
-npm run preview    # serve the production build
+npm run build      
+npm run preview   
 ```
 
 Optional: copy `.env.example` to `.env` to point at a different SWAPI base URL (`VITE_SWAPI_URL`).

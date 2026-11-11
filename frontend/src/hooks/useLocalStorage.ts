@@ -9,7 +9,6 @@ function read<T>(key: string, fallback: T): T {
   }
 }
 
-/** useState that persists to localStorage. Tolerates unavailable storage and corrupt values. */
 export function useLocalStorage<T>(key: string, initialValue: T) {
   const [value, setValue] = useState<T>(() => read(key, initialValue));
 
@@ -17,7 +16,6 @@ export function useLocalStorage<T>(key: string, initialValue: T) {
     try {
       window.localStorage.setItem(key, JSON.stringify(value));
     } catch {
-      // Storage may be full or blocked (private mode); the app keeps working in-memory.
     }
   }, [key, value]);
 
