@@ -81,11 +81,10 @@ export class WalletRepository {
     return row && toAccount(row);
   }
 
-  /**
-   * SELECT ... FOR UPDATE. Rows are always locked in ascending id order so two transfers
-   * between the same pair of accounts (A->B and B->A) can never deadlock.
-   * (SQLite, used in tests, serialises writers, and Knex omits FOR UPDATE for it.)
-   */
+   //SELECT ... FOR UPDATE. Rows are always locked in ascending id order so two transfers
+   //between the same pair of accounts (A->B and B->A) can never deadlock.
+   //(SQLite, used in tests, serialises writers, and Knex omits FOR UPDATE for it.)
+   
   async lockByIds(db: Db, ids: string[]): Promise<AccountRecord[]> {
     const rows = await db('accounts').whereIn('id', ids).orderBy('id', 'asc').forUpdate();
     return rows.map(toAccount);
